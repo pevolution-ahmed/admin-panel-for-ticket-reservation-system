@@ -1,0 +1,53 @@
+<div class="right_col">
+      <hr>
+          {{#if errors}}
+            {{#each errors}}
+              <div class="alert alert-danger">
+                {{this.msg}}
+              </div>
+            {{/each}}
+          {{/if}}
+
+	<form class="contact100-form validate-form" method="post">
+		<span class="contact100-form-title">{{title}}</span>
+
+		<label class="label-input100" for="first-name">Enter Class *</label>
+
+    
+		<div class="wrap-input100  validate-input"  >
+			{{#if classNameErr}} 
+			<span class=" validate-input alert-validate " data-validate="{{classNameErr}}"> </span>
+			{{/if}}
+			<select class="input100" name="className">
+				<option value="A">A</option>
+				<option value="B">B</option>
+				<option value="C">C</option>
+			</select>
+			<span class="focus-input100"></span>
+			
+		</div>
+
+
+		<label class="label-input100" for="email">Enter Stadium Name *</label>
+		<div class="wrap-input100 validate-input" >
+			{{#if stadiumNameErr}} 
+			<span class="validate-input alert-validate " data-validate="{{stadiumNameErr}}"> </span>
+			{{/if}}
+			<select class="input100" name="stadiumName">
+				<option value="Cairo International Stadium">Cairo International Stadium</option>
+				<option value="Borg El Arab Stadium">Borg El Arab Stadium</option>
+			</select>			<span class="focus-input100"></span>
+		</div>
+
+		<label class="label-input100" for="phone">Enter How Many Block in this Class*</label>
+		<div class="wrap-input100">
+			
+		
+			<input id="date" class="input100" max="1000" min="0" type="number" name="blockCount" >
+			<span class="focus-input100"></span>
+		</div>
+		
+		<div class="container-contact100-form-btn">
+		<input type="submit" class="contact100-form-btn" type="submit" style="height:50px">		</div>
+	</form>
+</div>

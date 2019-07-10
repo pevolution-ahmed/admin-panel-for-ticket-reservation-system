@@ -1,0 +1,57 @@
+<div class="right_col">
+      <hr>
+          {{#if errors}}
+            {{#each errors}}
+              <div class="alert alert-danger">
+                {{this.msg}}
+              </div>
+            {{/each}}
+          {{/if}}
+
+	<form class="contact100-form validate-form" method="post" >
+		<span class="contact100-form-title">{{title}}</span>
+
+		<label class="label-input100" for="first-name">Enter Stadium Name *</label>
+
+		<div class="wrap-input100  validate-input"  >
+			{{#if classnameErr}} 
+			<span class="validate-input alert-validate " data-validate="{{classnameErr}}"> </span>
+			{{/if}}
+			<input  class="input100" value="{{stadiumObj.StadiumName}}"  type="text" name="stadiumName" >
+			<span class="focus-input100"></span>
+		</div>
+		<label class="label-input100" for="first-name">Enter Address *</label>
+
+		<div class="wrap-input100  validate-input"  >
+			{{#if classnameErr}} 
+			<span class="validate-input alert-validate " data-validate="{{classnameErr}}"> </span>
+			{{/if}}
+			<input  class="input100"  type="text" value="{{stadiumObj.Address}}" name="address" >
+			<span class="focus-input100"></span>
+		</div>
+	
+
+		<label class="label-input100" for="email">Enter Capacity*</label>
+		<div class="wrap-input100 validate-input" >
+			{{#if classnameErr}} 
+			<span class="validate-input alert-validate " data-validate="{{classnameErr}}"> </span>
+			{{/if}}
+			<input class="input100" type="number" value="{{stadiumObj.Capacity}}" name="capacity" >
+			<span class="focus-input100"></span>
+		</div>
+
+
+				<label class="label-input100" for="email">Enter Number of Gates*</label>
+		<div class="wrap-input100 validate-input" >
+			{{#if classnameErr}} 
+			<span class="validate-input alert-validate " data-validate="{{classnameErr}}"> </span>
+			{{/if}}
+			<input class="input100" type="number" value="{{stadiumObj.NumberOfGates}}" name="gatesNumber" >
+			<span class="focus-input100"></span>
+		</div>
+		
+		<div class="container-contact100-form-btn">
+			<input type="submit" class="contact100-form-btn" type="submit" style="height:50px">
+		</div>
+	</form>
+</div>

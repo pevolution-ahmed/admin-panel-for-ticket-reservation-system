@@ -1,0 +1,89 @@
+<div class="right_col">
+
+          {{#if errors}}
+            {{#each errors}}
+              <div class="alert alert-danger">
+                {{this.msg}}
+              </div>
+            {{/each}}
+          {{/if}}
+          
+	<form class="contact100-form validate-form" method="post" >
+		<span class="contact100-form-title">{{title}}</span>
+
+		<label class="label-input100" for="first-name">Enter Username *</label>
+
+		<div class="wrap-input100  validate-input"  >
+			{{#if classnameErr}} 
+			<span class="validate-input alert-validate " data-validate="{{classnameErr}}"> </span>
+			{{/if}}
+			<input  class="input100"  type="text" name="username" >
+			<span class="focus-input100"></span>
+		</div>
+
+		<label class="label-input100" for="first-name">Enter Password *</label>
+
+		<div class="wrap-input100  validate-input"  >
+			{{#if classnameErr}} 
+			<span class="validate-input alert-validate " data-validate="{{classnameErr}}"> </span>
+			{{/if}}
+			<input  class="input100"  type="password" name="password" >
+			<span class="focus-input100"></span>
+		</div>
+	
+
+		<label class="label-input100" for="email">Re-Enter Password *</label>
+		<div class="wrap-input100 validate-input" >
+			{{#if classnameErr}} 
+			<span class="validate-input alert-validate " data-validate="{{classnameErr}}"> </span>
+			{{/if}}
+			<input class="input100" type="password" name="passwordMatch" >
+			<span class="focus-input100"></span>
+		</div>
+    
+    		<label class="label-input100" for="email"> Enter your Email Address*</label>
+		<div class="wrap-input100 validate-input" >
+			{{#if classnameErr}} 
+			<span class="validate-input alert-validate " data-validate="{{classnameErr}}"> </span>
+			{{/if}}
+			<input class="input100" type="text" name="email" >
+			<span class="focus-input100"></span>
+		</div>
+
+
+				<label class="label-input100" for="email">Enter your Birthdate*</label>
+		<div class="wrap-input100 validate-input" >
+			{{#if classnameErr}} 
+			<span class="validate-input alert-validate " data-validate="{{classnameErr}}"> </span>
+			{{/if}}
+			<input class="input100" type="date" name="birthday" >
+			<span class="focus-input100"></span>
+		</div>
+		
+    				<label class="label-input100" for="email">Enter National Identity *</label>
+		<div class="wrap-input100 validate-input" >
+			{{#if classnameErr}} 
+			<span class="validate-input alert-validate " data-validate="{{classnameErr}}"> </span>
+			{{/if}}
+			<input class="input100" type="number" name="nationalId" >
+			<span class="focus-input100"></span>
+		</div>
+		
+    				<label class="label-input100" for="email">Gender*</label>
+		<div class="wrap-input100 validate-input" >
+			{{#if classnameErr}} 
+			<span class="validate-input alert-validate " data-validate="{{classnameErr}}"> </span>
+			{{/if}}
+      <span class="h4"> Male </span><input type="radio" name="gender" value="Male">
+      <span class="h4"> Female </span><input type="radio" name="gender" value="Female">
+    	<span class="focus-input100"></span>
+		</div>
+		
+		<div class="container-contact100-form-btn">
+			<input type="submit" class="contact100-form-btn"  style="height:50px">
+		</div>
+	</form>
+
+          
+
+</div>

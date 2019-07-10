@@ -1,0 +1,41 @@
+<div class="right_col">
+      <hr>
+          {{#if errors}}
+            {{#each errors}}
+              <div class="alert alert-danger">
+                {{this.msg}}
+              </div>
+            {{/each}}
+          {{/if}}
+
+	<form class="contact100-form validate-form" method="post">
+		<span class="contact100-form-title">{{title}}</span>
+
+		<label class="label-input100" for="first-name">Enter Class *</label>
+
+    
+		<div class="wrap-input100  validate-input"  >
+			{{#if classnameErr}} 
+			<span class=" validate-input alert-validate " data-validate="{{classnameErr}}"> </span>
+			{{/if}}
+			<input  class="input100"  type="text" name="className" value="{{classObj.className}}">
+			<span class="focus-input100"></span>
+			
+		</div>
+
+
+		<label class="label-input100" for="email">Enter Stadium Name *</label>
+		<div class="wrap-input100 validate-input" >
+			{{#if classnameErr}} 
+			<span class="validate-input alert-validate " data-validate="{{classnameErr}}"> </span>
+			{{/if}}
+			<input class="input100" type="text" name="stadiumName" value="{{classObj.stadiumName}}" >
+			<span class="focus-input100"></span>
+		</div>
+
+		
+		
+		<div class="container-contact100-form-btn">
+		<input type="submit" class="contact100-form-btn" type="submit" style="height:50px">		</div>
+	</form>
+</div>

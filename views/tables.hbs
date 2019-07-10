@@ -1,0 +1,358 @@
+  <!-- page content -->
+ {{#if authenticated}}
+        <div class="right_col"  role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Admin Panel </h3>
+              </div>
+              <form action="tables/search" method="GET">
+              <div class="title_right">
+                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                  <div class="input-group">
+                    <input type="text" class="form-control" name="ssn" placeholder="Search by SSN...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="submit">Go!</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              </form>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="row">
+    
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Users Table<small>Custom design</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="main/user/create">Add new User</a>
+                          </li>
+                          
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+
+                  <div class="x_content">
+
+                    <p>Add class <code>bulk_action</code> to table for bulk actions options on row select</p>
+
+                    <div class="table-responsive">
+                      <table class="table table-striped jambo_table bulk_action">
+                        <thead>
+                          <tr class="headings">
+                            <th>
+                              <input type="checkbox" id="check-all" class="flat">
+                            </th>
+                            <th class="column-title">FullName </th>
+                            <th class="column-title">Email </th>
+                            <th class="column-title">Password </th>
+                            <th class="column-title">National ID</th>
+                            <th class="column-title">Gender </th>
+                            <th class="column-title">Birthday </th>
+                            <th class="column-title no-link last"><span class="nobr">Options</span>
+                            </th>
+                            <th class="bulk-actions" colspan="7">
+                              <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                         {{#if userObj}}
+                          <tr class="even pointer">
+                            {{#each userObj}}
+                              <td class="a-center ">
+                              <input type="checkbox" class="flat" name="table_records">
+                            </td> 
+                            <td class=" ">{{this.fullName}}</td>
+                            <td class=" ">{{this.email}}</td>
+                            <td class=" " style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;max-width: 100px;">{{this.password}}</td>
+                            <td class=" " >{{this.nationalId}}</td>
+                            <td class=" ">{{this.gender}}</td>
+                            <td class="a-right a-right ">{{this.birthday}}</td>
+                            <td class=" last "><a class="bg-info btn"href="/main/user/{{this.key}}/update">update</a>
+                              <a href="/main/user/{{this.key}}/delete" onclick="return confirm('Are you sure you would like to delete this user?');" class="bg-danger btn">delete</a>
+                            </td>
+                          </tr>
+                          {{/each}}
+                          {{/if}}
+
+                          
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+              
+            
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Match Table<small>Custom design</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                        
+                          <li><a href="main/match/create">Add new Match</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+
+                  <div class="x_content">
+
+                    <p>Add class <code>bulk_action</code> to table for bulk actions options on row select</p>
+
+                    <div class="table-responsive">
+                      <table class="table table-striped jambo_table bulk_action">
+                        <thead>
+                          <tr class="headings">
+                            <th>
+                              <input type="checkbox" id="check-all" class="flat">
+                            </th>
+                            <th class="column-title">Stage</th>
+                            <th class="column-title">Home Team </th>
+                            <th class="column-title">Home Team Img</th>
+                            <th class="column-title">Away Team</th>
+                            <th class="column-title">Away Team Img </th>
+                            <th class="column-title">Stadium </th>
+                            <th class="column-title">Date </th>
+                            <th class="column-title">Start Time </th>
+                            <th class="column-title">Ticket Prices </th>
+                            <th class="column-title no-link last"><span class="nobr">Options</span>
+                            </th>
+                            <th class="bulk-actions" colspan="7">
+                              <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                         {{#if matchObj}}
+                          <tr class="even pointer">
+                            {{#each matchObj}}
+                              <td class="a-center ">
+                              <input type="checkbox" class="flat" name="table_records">
+                            </td> 
+                            <td class=" ">{{this.Stage}}</td>
+                            <td class=" ">{{this.HomeTeamName}}</td>
+                            <td class=" "><img src={{this.HomeTeamImage}} alt="" style="width:50px; height:50px"></td>
+                            <td class=" ">{{this.AwayTeamName}}</td>
+                            <td class=" "><img src={{this.AwayTeamImage}} alt="" style="width:50px; height:50px"></td>
+                            <td class=" ">{{this.StadiumName}}</td>
+                            <td class=" ">{{this.Date}}</td>
+                            <td class=" ">{{this.StartTime}}</td>
+                            <td style="width :100px" class=" ">
+                                <ul>
+                                   <li>class A: {{ this.classTicketPrice.A}}</li>
+                                   <li>class B: {{ this.classTicketPrice.B}}</li>
+                                   <li>class C: {{ this.classTicketPrice.C}}</li>
+                              </ul>
+                            </td>
+                            <td class=" last "><a class="bg-info btn" href="/main/match/{{this.key}}/update">update</a>
+                                <a href="/main/match/{{this.key}}/delete" onclick="return confirm('Are you sure you would like to delete this Match?');" class="bg-danger btn">delete</a>
+                            </td>
+                          </tr>
+                          {{/each}}
+                          {{/if}}
+
+                          
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+              
+            
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Class Table<small>Custom design</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="main/class/create">Add New Class</a>
+                          </li>
+                          
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+
+                  <div class="x_content">
+
+                    <p>Add class <code>bulk_action</code> to table for bulk actions options on row select</p>
+
+                    <div class="table-responsive">
+                      <table class="table table-striped jambo_table bulk_action">
+                        <thead>
+                          <tr class="headings">
+                            <th>
+                              <input type="checkbox" id="check-all" class="flat">
+                            </th>
+                            <th class="column-title">Class Name</th>
+                            <th class="column-title">Stadium Name </th>
+                            <th class="column-title"> Blocks </th>
+
+                            <th class="column-title no-link last"><span class="nobr">Options</span>
+                            </th>
+                            <th class="bulk-actions" colspan="7">
+                              <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                         {{#if classObj}}
+                          <tr class="even pointer">
+                            {{#each classObj}}
+                              <td class="a-center ">
+                              <input type="checkbox" class="flat" name="table_records">
+                            </td> 
+                            <td class=" ">{{this.className}}</td>
+                            <td class=" ">{{this.stadiumName}}</td>
+                            <td class=" ">
+                              <ul>
+                              {{#each this.blocks}}
+                                  <li class=" h4">blockNumber : {{this.blockNumber}}</li>
+                                  <li  class=" h4" >seats : {{toNumbers this.seats}}</li>
+                                  <li class=" h4">gateNumber : {{this.gateNumber}}</li>
+                                  <hr>
+                              {{/each}}
+                              </ul>
+                          </td>
+                            
+                            <td class=" last "><a class="bg-info btn"href="/main/class/{{this.key}}/update">update</a>
+                              <a href="/main/class/{{this.key}}/delete" onclick="return confirm('Are you sure you would like to delete this class?');" class="bg-danger btn">delete</a>
+                            </td>
+                          </tr>
+                          {{/each}}
+                          {{/if}}
+
+                          
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+              
+            
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-8 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Stadium Table<small>Custom design</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="main/stadium/create">Add Stadium</a>
+                          </li>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+
+                  <div class="x_content">
+
+                    <p>Add class <code>bulk_action</code> to table for bulk actions options on row select</p>
+
+                    <div class="table-responsive">
+                      <table class="table table-striped jambo_table bulk_action">
+                        <thead>
+                          <tr class="headings">
+                            <th>
+                              <input type="checkbox" id="check-all" class="flat">
+                            </th>
+                            <th class="column-title">Name</th>
+                            <th class="column-title">Address</th>
+                            <th class="column-title">Capacity</th>
+                            <th class="column-title">Number of Gates</th>
+                            <th class="column-title no-link last"><span class="nobr">Options</span>
+                            </th>
+                            <th class="bulk-actions" colspan="7">
+                              <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                         {{#if stadiumObj}}
+                          <tr class="even pointer">
+                            {{#each stadiumObj}}
+                              <td class="a-center ">
+                              <input type="checkbox" class="flat" name="table_records">
+                            </td> 
+                            <td class=" ">{{this.StadiumName}}</td>
+                            <td class=" ">{{this.Address}}</td>
+                            <td class=" ">{{this.Capacity}}</td>
+                            <td class=" ">{{this.NumberOfGates}}</td>
+                             <td class=" last "><a class="bg-info btn" href="/main/stadium/{{this.key}}/update">update</a>
+                                <a href="/main/stadium/{{this.key}}/delete" onclick="return confirm('Are you sure you would like to delete this Stadium?');" class="bg-danger btn">delete</a>
+                            </td>                        </td>
+                          </tr>
+                          {{/each}}
+                          {{/if}}
+
+                          
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+              
+            
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+        {{else}}
+        <div class="alert alert-danger">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <h1 >Unauthenticated user</h1>
+    <a href="/login"><h3 class="white">Back to login page</h3></a> 
+  </div>
+{{/if}}
+
+  
+  
+          

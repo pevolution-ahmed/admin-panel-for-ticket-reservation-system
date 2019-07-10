@@ -1,0 +1,24 @@
+
+<div class="right_col">
+      <hr>
+          {{#if errors}}
+            {{#each errors}}
+              <div class="alert alert-danger">
+                {{this.msg}}
+              </div>
+            {{/each}}
+          {{/if}}
+	<form class="contact100-form validate-form" method="post">
+          		<span class="contact100-form-title">{{title}}</span>
+
+		<select name="blockNum">
+				<option value="select a Block" selected="selected">select a Block</option>
+			{{#each blockCount}}
+				<option >{{this}}</option>
+			{{/each}}
+		</select>
+<input type="submit" class="contact100-form-btn" type="submit" style="height:30px">
+		<div class="container-contact100-form-btn">
+				</div>
+	</form>
+</div>

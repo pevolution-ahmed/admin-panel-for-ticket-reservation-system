@@ -1,0 +1,113 @@
+<div class="right_col">
+      <hr>
+          {{#if errors}}
+            {{#each errors}}
+              <div class="alert alert-danger">
+                {{this.msg}}
+              </div>
+            {{/each}}
+          {{/if}}
+
+	<form class="contact100-form validate-form" method="post" enctype="multipart/form-data">
+		<span class="contact100-form-title">{{title}}</span>
+
+		<label class="label-input100" for="first-name">Enter Home Team *</label>
+
+		<div class="wrap-input100 rs1-wrap-input100 validate-input"  >
+			{{#if classnameErr}} 
+			<span class="rs1-wrap-input100 validate-input alert-validate " data-validate="{{classnameErr}}"> </span>
+			{{/if}}
+			<input  class="input100"  type="text" name="homeTeamName" placeholder="Team Name">
+			<span class="focus-input100"></span>
+			
+		</div>
+		<div class="wrap-input100 rs2-wrap-input100 validate-input"  >
+			{{#if classnameErr}} 
+			<span class=" validate-input alert-validate " data-validate="{{classnameErr}}"> </span>
+			{{/if}}
+			<label class="input100 contact100-form-btn"  for="file" />Upload Image</label>
+			<input  id="file" required class="file-style" type="file" name="homeTeamImg" >
+			<span class="focus-input100"></span>
+			
+		</div>
+
+
+		<label class="label-input100" for="email">Enter Away Team *</label>
+		<div class=" rs1-wrap-input100 wrap-input100 validate-input" >
+			{{#if classnameErr}} 
+			<span class="validate-input alert-validate " data-validate="{{classnameErr}}"> </span>
+			{{/if}}
+			<input class="input100" type="text" name="awayTeamName" placeholder="Team Name" >
+			<span class="focus-input100"></span>
+		</div>
+		<div class="wrap-input100 rs2-wrap-input100 validate-input"  >
+			{{#if classnameErr}} 
+			<span class=" validate-input alert-validate " data-validate="{{classnameErr}}"> </span>
+			{{/if}}
+			<label class="input100 contact100-form-btn"  for="file2" />Upload Image</label>
+			<input  id="file2" required class="file-style" type="file" name="awayTeamImg" >
+			<span class="focus-input100"></span>
+			
+		</div>
+
+		<label class="label-input100" for="email">Enter Start Time *</label>
+		<div class="wrap-input100 validate-input" >
+			{{#if classnameErr}} 
+			<span class="validate-input alert-validate " data-validate="{{classnameErr}}"> </span>
+			{{/if}}
+			<input required class="input100" type="time" name="startTime" >
+			<span class="focus-input100"></span>
+		</div>
+
+		<label class="label-input100" for="email">Enter Stadium Name *</label>
+		<div class="wrap-input100 validate-input" >
+			{{#if classnameErr}} 
+			<span class="validate-input alert-validate " data-validate="{{classnameErr}}"> </span>
+			{{/if}}
+			<select  class="input100" name="stadiumName">
+				<option value="Cairo International Stadium">Cairo International Stadium</option>
+				<option value="Borg El Arab Stadium">Borg El Arab Stadium</option>
+			</select>
+			<span class="focus-input100"></span>
+		</div>
+
+		<label class="label-input100" for="email">Enter Stage *</label>
+		<div class="wrap-input100 validate-input" >
+			{{#if classnameErr}} 
+			<span class="validate-input alert-validate " data-validate="{{classnameErr}}"> </span>
+			{{/if}}
+			<select class="input100" name="stage">
+				<option value="Quarter">Quarter</option>
+				<option value="Semifinal">Semifinal</option>
+				<option value="Final">Final</option>
+			</select>
+			<span class="focus-input100"></span>
+		</div>
+
+<label class="label-input100" for="email">Enter Ticket Price For Each Class *</label>
+		<div class="wrap-input100 validate-input" >
+			{{#if classnameErr}} 
+			<span class="validate-input alert-validate " data-validate="{{classnameErr}}"> </span>
+			{{/if}}
+			<input required class="input100" placeholder= "class A" type="number" name="classTicketPrice[]" >
+			<span class="focus-input100"></span>
+			<input required class="input100" placeholder= "class B" type="number" name="classTicketPrice[]" >
+			<span class="focus-input100"></span>
+			<input required class="input100" placeholder= "class C" type="number" name="classTicketPrice[]" >
+			<span class="focus-input100"></span>
+		</div>
+
+		<label class="label-input100" for="phone">Enter Match Date*</label>
+		<div class="wrap-input100">
+			{{#if classnameErr}} 
+			<span class="validate-input alert-validate " data-validate="{{classnameErr}}"> </span>
+			{{/if}}
+			<input required id="date" class="input100" type="date" name="matchDate" >
+			<span class="focus-input100"></span>
+		</div>
+		
+		<div class="container-contact100-form-btn">
+			<input type="submit" class="contact100-form-btn" type="submit" style="height:50px">
+		</div>
+	</form>
+</div>

@@ -1,0 +1,46 @@
+	<div class="right_col">
+      <hr>
+          {{#if errors}}
+            {{#each errors}}
+              <div class="alert alert-danger">
+                {{this.msg}}
+              </div>
+            {{/each}}
+          {{/if}}
+		
+
+	<form class="contact100-form validate-form" method="post">
+		<span class="contact100-form-title">{{title}}</span>
+
+		<label class="label-input100" for="email">Enter Block Number *</label>
+		<div class="wrap-input100 validate-input" >
+			{{#if classnameErr}} 
+			<span class="validate-input alert-validate " data-validate="{{classnameErr}}"> </span>
+			{{/if}}
+			<input value= "{{blockObj.blockNumber}}" class="input100" type="text" name="blockNumber" >
+			<span class="focus-input100"></span>
+		</div>
+
+		<label class="label-input100" for="phone">Enter How Many Seats in The Block*</label>
+		<div class="wrap-input100">
+			{{#if classnameErr}} 
+			<span class="validate-input alert-validate " data-validate="{{classnameErr}}"> </span>
+			{{/if}}
+			<input value= "{{blockObj.seats}}" id="date" class="input100" max="100000" type="number" name="seats" >
+			<span class="focus-input100"></span>
+		</div>
+
+		<label class="label-input100" for="first-name">Enter Gate Number *</label>
+		<div class="wrap-input100  validate-input"  >
+			{{#if classnameErr}} 
+			<span class=" validate-input alert-validate " data-validate="{{classnameErr}}"> </span>
+			{{/if}}
+			<input value= "{{blockObj.gateNumber}}" class="input100"  type="text" name="gateNumber" >
+			<span class="focus-input100"></span>
+			
+		</div>
+		
+		<div class="container-contact100-form-btn">
+		<input type="submit" class="contact100-form-btn" type="submit" style="height:50px">		</div>
+	</form>
+</div>

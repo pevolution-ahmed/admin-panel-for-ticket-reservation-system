@@ -1,0 +1,84 @@
+
+      <h1 >{{title}}</h1>
+      <hr>
+          {{#if errors}}
+            {{#each errors}}
+              <div class="alert alert-danger">
+                {{this.msg}}
+              </div>
+            {{/each}}
+          {{/if}}
+          
+          <form class="form-horizontal form-label-left input_mask">
+            <div class="item form-group bad">
+<label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Name <span class="required">*</span>
+</label>
+<div class="col-md-6 col-sm-6 col-xs-12">
+<input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="both name(s) e.g Jon Doe" required="required" type="text">
+</div>
+<div class="alert">please put something here</div></div>
+<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+<input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="First Name">
+<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+</div>
+<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+<input type="text" class="form-control" id="inputSuccess3" placeholder="Last Name">
+<span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+</div>
+<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+<input type="text" class="form-control has-feedback-left" id="inputSuccess4" placeholder="Email">
+<span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
+</div>
+<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+<input type="text" class="form-control" id="inputSuccess5" placeholder="Phone">
+<span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span>
+</div>
+  </form>
+           <form   method="post">
+                <div class="form-row">
+                  <div class="col-md-6">
+                      <div class="form-group">
+                      <label for="">Username</label>
+                      <input type="text"name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email"name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" >
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="password"name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Re-Enter Password</label>
+                      <input type="password"name="passwordMatch" class="form-control" id="exampleInputPassword1" placeholder="Password-Confirm">
+                    </div>
+                    <br>
+                    <button class="btn btn-primary btn-lg " style="width:200px"type="submit" >Submit</button>
+
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="">Birthdate</label><br>
+                    <input type="date" name="birthday">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1"> National Identity</label>
+
+                    <input type="text"name="nationalId" class="form-control" placeholder="National Id"required>
+                    {{#if idErr}}
+                      <div class="alert alert-danger"> {{idErr}}</div>
+                    {{/if}} 
+                  </div>
+                  <div class="form-group">
+                    <label for="">Gender</label>
+                     <small>Male </small><input type="radio" name="gender" value="Male">
+                    <small>Female </small><input type="radio" name="gender" value="Female">
+                  </div>
+                </div>
+              </div>
+
+              </form>
+
