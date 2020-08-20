@@ -10,7 +10,7 @@
   "dependencies": {
     "@google-cloud/storage": "^2.5.0",
     "async": "^2.6.2",
-    "bcrypt": "^3.0.4",
+    "bcrypt": "^5.0.0",
     "bcrypt-nodejs": "0.0.3",
     "bootstrap": "^4.3.1",
     "braintree": "^2.16.0",
